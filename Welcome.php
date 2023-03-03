@@ -78,13 +78,11 @@
             $count_rows = mysqli_num_rows($result);
             if ($count_rows == 0) {
                 echo "<script> alert('Wrong username or password!!!')</script>";
-            } else if ($username == 'admin' and $userpassw == 'admin') {
-                echo "<script>window.open('UpDog.php','_self')</script>";
-            } else if ($username == 'admin2' and $userpassw == 'admin2') {
-                echo "<script>window.open('CatUp.php','_self')</script>";
+            } else if ($useremail == 'admin@gmail.com' and $userpassw == 'admin123admin') {
+                echo "<script>window.open('Admin/Management.php','_self')</script>";
             } else {
                 echo "<script> alert($username'Logged in successfully!!')</script>";
-                echo "<script>window.open('Pet.php','_self')</script>";
+                echo "<script>window.open('index.php','_self')</script>";
                 $_SESSION['SignIn']['username'] = $username;
             }
         }
@@ -93,7 +91,6 @@
 
     </html>
     <!-- partial -->
-
 </body>
 
 </html>

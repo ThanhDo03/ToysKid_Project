@@ -53,7 +53,7 @@
             <a href="index.html" class="nav-link"><i class="fa-sharp fa-solid fa-house"></i> Home</a>
           </li>
           <li class="nav-item">
-            <a href="chart-chartjs.html" class="nav-link"><i class="fa-sharp fa-solid fa-upload"></i> Upload Product</a>
+            <a href="Upload_Product.php" class="nav-link"><i class="fa-sharp fa-solid fa-upload"></i> Upload Product</a>
           </li>
           <li class="nav-item">
             <a href="form-elements.html" class="nav-link"><i class="typcn typcn-chart-bar-outline"></i> Forms</a>
