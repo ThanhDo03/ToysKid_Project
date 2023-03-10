@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>CodePen - Sign up / Login Form</title>
+    <title>Kid Store - Sign up / Login Form</title>
     <link rel="stylesheet" href="./css/style_Welcome.css">
 
 </head>
@@ -44,7 +44,7 @@
         </div>
 
         <?php
-        $connect = mysqli_connect('localhost', 'root', '', 'sale');
+        $connect = mysqli_connect('localhost', 'root', '', 'toyskid_project');
         if (!$connect) {
             echo "Not Connect";
         }
@@ -64,7 +64,7 @@
 
         <?php
         session_start();
-        $connect = mysqli_connect('localhost', 'root', '', 'sale');
+        $connect = mysqli_connect('localhost', 'root', '', 'toyskid_project');
         if (!$connect) {
             # code...
             echo "Not Connect!!";

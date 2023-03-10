@@ -41,7 +41,7 @@
 	content: "\e649";
 }
 .ti-angle-left:before {
-	content: "\e64a";
+	content: "<i class="fa-sharp fa-solid fa-less-than"></i>";
 }
 .ti-menu:before {
 	content: "\e68e";
