@@ -80,10 +80,11 @@
                 echo "<script> alert('Wrong username or password!!!')</script>";
             } else if ($useremail == 'admin@gmail.com' and $userpassw == 'admin123admin') {
                 echo "<script>window.open('Admin/Management.php','_self')</script>";
+                $_SESSION['Welcome']['useremail'] = $useremail;
             } else {
                 echo "<script> alert($username'Logged in successfully!!')</script>";
                 echo "<script>window.open('index.php','_self')</script>";
-                $_SESSION['SignIn']['username'] = $username;
+                $_SESSION['Welcome']['useremail'] = $useremail;
             }
         }
         ?>

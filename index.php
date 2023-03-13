@@ -1,3 +1,7 @@
+<?php
+session_start();
+
+?>
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -69,7 +73,8 @@
                         bw[by].q.push(bM)
                     }
                     bE.defer = !0;
-                    for (const bN of [localStorage, sessionStorage]) Object.keys(bN || {}).filter((bP => bP.startsWith("_zaraz_"))).forEach((bO => {
+                    for (const bN of [localStorage, sessionStorage]) Object.keys(bN || {}).filter((bP => bP
+                        .startsWith("_zaraz_"))).forEach((bO => {
                         try {
                             bw[by]["z_" + bO.slice(7)] = JSON.parse(bN.getItem(bO))
                         } catch {
@@ -80,7 +85,8 @@
                     bE.src = "/cdn-cgi/zaraz/s.js?z=" + btoa(encodeURIComponent(JSON.stringify(bw[by])));
                     bD.parentNode.insertBefore(bE, bD)
                 };
-                ["complete", "interactive"].includes(bx.readyState) ? zaraz.init() : bw.addEventListener("DOMContentLoaded", zaraz.init)
+                ["complete", "interactive"].includes(bx.readyState) ? zaraz.init() : bw.addEventListener(
+                    "DOMContentLoaded", zaraz.init)
             }(w, d, "zarazData", "script");
         })(window, document);
     </script>
@@ -115,7 +121,7 @@
                         <ul class="nav-right">
                             <li class="cart-icon">
                                 <a href="#">
-                                        <i class="fa-sharp fa-solid fa-bag-shopping"></i>
+                                    <i class="fa-sharp fa-solid fa-bag-shopping"></i>
                                     <span>3</span>
                                 </a>
                                 <div class="cart-hover">
@@ -123,7 +129,8 @@
                                         <table>
                                             <tbody>
                                                 <tr>
-                                                    <td class="si-pic"><img src="img/select-product-1.jpg" alt=""></td>
+                                                    <td class="si-pic"><img src="img/select-product-1.jpg"
+                                                            alt=""></td>
                                                     <td class="si-text">
                                                         <div class="product-selected">
                                                             <p>$60.00 x 1</p>
@@ -135,7 +142,8 @@
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td class="si-pic"><img src="img/select-product-2.jpg" alt=""></td>
+                                                    <td class="si-pic"><img src="img/select-product-2.jpg"
+                                                            alt=""></td>
                                                     <td class="si-text">
                                                         <div class="product-selected">
                                                             <p>$60.00 x 1</p>
@@ -196,15 +204,26 @@
                         </li>
                         <li><a href="./blog.html">Blog</a></li>
                         <li><a href="./contact.html">Contact</a></li>
-                        <li><a href="#">Pages</a>
-                            <ul class="dropdown">
-                                <li><a href="./blog-details.html">Blog Details</a></li>
-                                <li><a href="./shopping-cart.html">Shopping Cart</a></li>
-                                <li><a href="./check-out.html">Checkout</a></li>
-                                <li><a href="./faq.html">Faq</a></li>
-                                <li><a href="./register.html">Register</a></li>
-                                <li><a href="./Welcome.php">Login</a></li>
-                            </ul>
+                        <li>
+                        <?php
+                                if (isset($_SESSION['Welcome']['useremail'])) {
+                                    echo "<a href=''>Ab Me</a>
+                                            <ul class='dropdown'>
+                                            <li><a href=''>Account</a></li>
+                                            <li><a href=''>Shopping Cart</a></li>
+                                            <li><a href=''>Pays</a></li>
+                                            <li><a href=''>Sign Up</a></li>
+                                            <li><a href='Logout.php'>Log Out</a></li>
+                                            <li><a href=''>About Us</a></li>
+                                        </ul>";
+                                } else {
+                                    echo "<a href='./Welcome.php'>Sign In</a>
+                                            <ul class='dropdown'>
+                                                <li><a href='./Welcome.php'>SIGN UP</a></li>
+                                            </ul>
+                                    ";
+                                }
+                        ?>
                         </li>
                     </ul>
                 </nav>
@@ -216,7 +235,7 @@
 
     <section class="hero-section">
         <div class="hero-items owl-carousel">
-            <div class="single-hero-items set-bg" data-setbg="img/hero-1.jpg">
+            <div class="single-hero-items set-bg" data-setbg="img/Marvel.jpg">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-5">
@@ -232,20 +251,8 @@
                     </div>
                 </div>
             </div>
-            <div class="single-hero-items set-bg" data-setbg="img/hero-2.jpg">
+            <div class="single-hero-items set-bg" data-setbg="img/Marvel-1.jpg">
                 <div class="container">
-                    <div class="row">
-                        <div class="col-lg-5">
-                            <span>Bag,kids</span>
-                            <h1>Black friday</h1>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                incididunt ut labore et dolore</p>
-                            <a href="#" class="primary-btn">Shop Now</a>
-                        </div>
-                    </div>
-                    <div class="off-card">
-                        <h2>Sale <span>50%</span></h2>
-                    </div>
                 </div>
             </div>
         </div>
@@ -257,25 +264,25 @@
             <div class="row">
                 <div class="col-lg-4">
                     <div class="single-banner">
-                        <img src="img/banner-1.jpg" alt="">
+                        <img src="img/Banner-1.jpg" alt="">
                         <div class="inner-text">
-                            <h4>Men’s</h4>
+                            <h4>City</h4>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4">
                     <div class="single-banner">
-                        <img src="img/banner-2.jpg" alt="">
+                        <img src="img/Banner-2.jpg" alt="">
                         <div class="inner-text">
-                            <h4>Women’s</h4>
+                            <h4>Ninja</h4>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4">
                     <div class="single-banner">
-                        <img src="img/banner-3.jpg" alt="">
+                        <img src="img/Banner.jpg" alt="">
                         <div class="inner-text">
-                            <h4>Kid’s</h4>
+                            <h4>Marvel</h4>
                         </div>
                     </div>
                 </div>
@@ -288,18 +295,16 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-3">
-                    <div class="product-large set-bg" data-setbg="img/products/women-large.jpg">
-                        <h2>Women’s</h2>
-                        <a href="#">Discover More</a>
+                    <div class="product-large set-bg" data-setbg="img/products/LogoGroup0.jpg">
                     </div>
                 </div>
                 <div class="col-lg-8 offset-lg-1">
                     <div class="filter-control">
                         <ul>
-                            <li class="active">Clothings</li>
-                            <li>HandBag</li>
+                            <li class="active">Lego Marvel</li>
+                            <!-- <li>HandBag</li>
                             <li>Shoes</li>
-                            <li>Accessories</li>
+                            <li>Accessories</li> -->
                         </ul>
                     </div>
                     <div class="product-slider owl-carousel">
@@ -328,6 +333,7 @@
                             </div>
                         </div>
                         <div class="product-item">
+
                             <div class="pi-pic">
                                 <img src="img/products/women-2.jpg" alt="">
                                 <div class="icon">
@@ -400,7 +406,7 @@
     </section>
 
 
-    <section class="deal-of-week set-bg spad" data-setbg="img/time-bg.jpg">
+    <section class="deal-of-week set-bg spad" data-setbg="img/55637.jpg">
         <div class="container">
             <div class="col-lg-6 text-center">
                 <div class="section-title">
@@ -408,8 +414,8 @@
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed<br /> do ipsum dolor sit amet,
                         consectetur adipisicing elit </p>
                     <div class="product-price">
-                        $35.00
-                        <span>/ HanBag</span>
+                        $350.000
+                        <span>/ Marvel</span>
                     </div>
                 </div>
                 <div class="countdown-timer" id="countdown">
@@ -442,60 +448,67 @@
                 <div class="col-lg-8">
                     <div class="filter-control">
                         <ul>
-                            <li class="active">Clothings</li>
-                            <li>HandBag</li>
+                            <li class="active">Lego City - Family</li>
+                            <!-- <li>HandBag</li>
                             <li>Shoes</li>
-                            <li>Accessories</li>
+                            <li>Accessories</li> -->
                         </ul>
                     </div>
                     <div class="product-slider owl-carousel">
-                        <div class="product-item">
-                            <div class="pi-pic">
-                                <img src="img/products/man-1.jpg" alt="">
-                                <div class="sale">Sale</div>
-                                <div class="icon">
-                                    <i class="icon_heart_alt"></i>
+                        <?php
+                        $connect = mysqli_connect('localhost', 'root', '', 'ToysKid_Project');
+                        
+                        if (mysqli_connect_errno()) {
+                            echo 'Không thể kết nối đến MySQL: ' . mysqli_connect_error();
+                            exit();
+                        }
+                        
+                        // truy vấn dữ liệu
+                        $result = mysqli_query($connect, 'SELECT name, price, Image FROM products');
+                        
+                        // kiểm tra kết quả và hiển thị dữ liệu
+                        if (mysqli_num_rows($result) > 0) {
+                            while ($row = mysqli_fetch_assoc($result)) {
+                                $name = $row['name'];
+                                $price = $row['price'];
+                                $image = $row['Image'];
+                               
+                                echo "
+                                <div class='product-item'>
+                                <div class='pi-pic'>
+                                    <img src='./Admin/Products\\$image'>
+                                    <div class='sale'>Sale</div>
+                                    <div class='icon'>
+                                        <i class='icon_heart_alt'></i>
+                                    </div>
+                                    <ul>
+                                        <li class='w-icon active'><a href='#'><i class='icon_bag_alt'></i></a></li>
+                                        <li class='quick-view'><a href='#'>+ Quick View</a></li>
+                                        <li class='w-icon'><a href='#'><i class='fa fa-random'></i></a></li>
+                                    </ul>
                                 </div>
-                                <ul>
-                                    <li class="w-icon active"><a href="#"><i class="icon_bag_alt"></i></a></li>
-                                    <li class="quick-view"><a href="#">+ Quick View</a></li>
-                                    <li class="w-icon"><a href="#"><i class="fa fa-random"></i></a></li>
-                                </ul>
-                            </div>
-                            <div class="pi-text">
-                                <div class="catagory-name">Coat</div>
-                                <a href="#">
-                                    <h5>Pure Pineapple</h5>
-                                </a>
-                                <div class="product-price">
-                                    $14.00
-                                    <span>$35.00</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product-item">
-                            <div class="pi-pic">
-                                <img src="img/products/man-2.jpg" alt="">
-                                <div class="icon">
-                                    <i class="icon_heart_alt"></i>
-                                </div>
-                                <ul>
-                                    <li class="w-icon active"><a href="#"><i class="icon_bag_alt"></i></a></li>
-                                    <li class="quick-view"><a href="#">+ Quick View</a></li>
-                                    <li class="w-icon"><a href="#"><i class="fa fa-random"></i></a></li>
-                                </ul>
-                            </div>
-                            <div class="pi-text">
-                                <div class="catagory-name">Shoes</div>
-                                <a href="#">
-                                    <h5>Guangzhou sweater</h5>
-                                </a>
-                                <div class="product-price">
-                                    $13.00
+                                <div class='pi-text'>
+                                    <a href='#'>
+                                        <h5>$name</h5>
+                                    </a>
+                                    <div class='product-price'>
+                                        $14.00
+                                        <span>$price</span>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="product-item">
+                                ";
+                            }
+                        } else {
+                            echo 'Không có sản phẩm nào trong cơ sở dữ liệu.';
+                        }
+                        
+                        // đóng kết nối
+                        mysqli_close($connect);
+                        ?>
+                        
+                        
+                        <!-- <div class="product-item">
                             <div class="pi-pic">
                                 <img src="img/products/man-3.jpg" alt="">
                                 <div class="icon">
@@ -516,33 +529,11 @@
                                     $34.00
                                 </div>
                             </div>
-                        </div>
-                        <div class="product-item">
-                            <div class="pi-pic">
-                                <img src="img/products/man-4.jpg" alt="">
-                                <div class="icon">
-                                    <i class="icon_heart_alt"></i>
-                                </div>
-                                <ul>
-                                    <li class="w-icon active"><a href="#"><i class="icon_bag_alt"></i></a></li>
-                                    <li class="quick-view"><a href="#">+ Quick View</a></li>
-                                    <li class="w-icon"><a href="#"><i class="fa fa-random"></i></a></li>
-                                </ul>
-                            </div>
-                            <div class="pi-text">
-                                <div class="catagory-name">Towel</div>
-                                <a href="#">
-                                    <h5>Converse Shoes</h5>
-                                </a>
-                                <div class="product-price">
-                                    $34.00
-                                </div>
-                            </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
                 <div class="col-lg-3 offset-lg-1">
-                    <div class="product-large set-bg m-large" data-setbg="img/products/man-large.jpg">
+                    <div class="product-large set-bg m-large" data-setbg="img/products/LogoGroup1.jpg">
                         <h2>Men’s</h2>
                         <a href="#">Discover More</a>
                     </div>
@@ -553,37 +544,37 @@
 
 
     <div class="instagram-photo">
-        <div class="insta-item set-bg" data-setbg="img/insta-1.jpg">
+        <div class="insta-item set-bg" data-setbg="img/Cap-Marvel.jpg">
             <div class="inside-text">
                 <i class="ti-instagram"></i>
                 <h5><a href="#">colorlib_Collection</a></h5>
             </div>
         </div>
-        <div class="insta-item set-bg" data-setbg="img/insta-2.jpg">
+        <div class="insta-item set-bg" data-setbg="img/Nhen-Marvel.jpg">
             <div class="inside-text">
                 <i class="ti-instagram"></i>
                 <h5><a href="#">colorlib_Collection</a></h5>
             </div>
         </div>
-        <div class="insta-item set-bg" data-setbg="img/insta-3.jpg">
+        <div class="insta-item set-bg" data-setbg="img/Wasp-Marvel.jpg">
             <div class="inside-text">
                 <i class="ti-instagram"></i>
                 <h5><a href="#">colorlib_Collection</a></h5>
             </div>
         </div>
-        <div class="insta-item set-bg" data-setbg="img/insta-4.jpg">
+        <div class="insta-item set-bg" data-setbg="img/IronMan-Marvel.jpg">
             <div class="inside-text">
                 <i class="ti-instagram"></i>
                 <h5><a href="#">colorlib_Collection</a></h5>
             </div>
         </div>
-        <div class="insta-item set-bg" data-setbg="img/insta-5.jpg">
+        <div class="insta-item set-bg" data-setbg="img/Thor-Marvel.jpg">
             <div class="inside-text">
                 <i class="ti-instagram"></i>
                 <h5><a href="#">colorlib_Collection</a></h5>
             </div>
         </div>
-        <div class="insta-item set-bg" data-setbg="img/insta-6.jpg">
+        <div class="insta-item set-bg" data-setbg="img/QuaPhu-Marvel.jpg">
             <div class="inside-text">
                 <i class="ti-instagram"></i>
                 <h5><a href="#">colorlib_Collection</a></h5>
@@ -751,7 +742,9 @@
                         <ul>
                             <li>Address: 60-49 Road 11378 New York</li>
                             <li>Phone: +65 11.188.888</li>
-                            <li>Email: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="5e363b323231703d3132312c32373c1e39333f3732703d3133">[email&#160;protected]</a></li>
+                            <li>Email: <a href="/cdn-cgi/l/email-protection" class="__cf_email__"
+                                    data-cfemail="5e363b323231703d3132312c32373c1e39333f3732703d3133">[email&#160;protected]</a>
+                            </li>
                         </ul>
                         <div class="footer-social">
                             <a href="#"><i class="fa fa-facebook"></i></a>
@@ -801,10 +794,13 @@
                     <div class="col-lg-12">
                         <div class="copyright-text">
 
-                            Copyright &copy;<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+                            Copyright &copy;
+                            <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
                             <script>
                                 document.write(new Date().getFullYear());
-                            </script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                            </script> All rights reserved | This template is made with <i
+                                class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com"
+                                target="_blank">Colorlib</a>
 
                         </div>
                         <div class="payment-pic">
@@ -839,7 +835,10 @@
 
         gtag('config', 'UA-23581568-13');
     </script>
-    <script defer src="https://static.cloudflareinsights.com/beacon.min.js/vaafb692b2aea4879b33c060e79fe94621666317369993" integrity="sha512-0ahDYl866UMhKuYcW078ScMalXqtFJggm7TmlUtp0UlD4eQk0Ixfnm5ykXKvGJNFjLMoortdseTfsRT8oCfgGA==" data-cf-beacon='{"rayId":"79f83bff0abd045b","token":"cd0b4b3a733644fc843ef0b185f98241","version":"2023.2.0","si":100}' crossorigin="anonymous"></script>
+    <script defer src="https://static.cloudflareinsights.com/beacon.min.js/vaafb692b2aea4879b33c060e79fe94621666317369993"
+        integrity="sha512-0ahDYl866UMhKuYcW078ScMalXqtFJggm7TmlUtp0UlD4eQk0Ixfnm5ykXKvGJNFjLMoortdseTfsRT8oCfgGA=="
+        data-cf-beacon='{"rayId":"79f83bff0abd045b","token":"cd0b4b3a733644fc843ef0b185f98241","version":"2023.2.0","si":100}'
+        crossorigin="anonymous"></script>
 </body>
 
 </html>

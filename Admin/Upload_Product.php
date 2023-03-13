@@ -5,7 +5,7 @@
         <div class="az-content-body">
             <div class="az-dashboard-one-title">
                 <div>
-                    <h2 class="az-dashboard-title">Hi, welcome back!</h2>
+                    <h2 class="az-dashboard-title">Hi, Admin</h2>
                     <p class="az-dashboard-text">Add New Product.</p>
                 </div>
             </div><!-- az-dashboard-one-title -->
@@ -14,15 +14,23 @@
                 <nav class="nav">
                     <a class="nav-link active" data-toggle="tab" href="./Management.php"><i
                             class="fa-sharp fa-solid fa-house"></i> Home </a>
-                    <a class="nav-link" data-toggle="tab" href="#">Demographics</a>
-                    <a class="nav-link" data-toggle="tab" href="#">More</a>
+                    <a class="nav-link" data-toggle="tab" href="#"> ...Category </a>
+                    <!-- <a class="nav-link" data-toggle="tab" href="#">More</a> -->
                 </nav>
 
                 <nav class="nav">
-                    <a class="nav-link" href="#"><i class="far fa-save"></i> Save Report</a>
-                    <a class="nav-link" href="#"><i class="far fa-file-pdf"></i> Export to PDF</a>
-                    <a class="nav-link" href="#"><i class="far fa-envelope"></i>Send to Email</a>
-                    <a class="nav-link" href="#"><i class="fas fa-ellipsis-h"></i></a>
+                    <?php
+                        if(isset($_SESSION['Welcome']['useremail'])){
+                            echo "
+                                <a class='nav-link' href='#'><i class='fa-sharp fa-solid fa-user'></i> {$_SESSION['Welcome']['useremail']}</a>
+                                
+                            ";
+                            echo "<a class='nav-link' href='../Logout.php'><i class='fa-sharp fa-solid fa-right-from-bracket'></i> Logout</a>";
+                            echo "<a class='nav-link' href='#'><i class='fas fa-ellipsis-h'></i></a>";
+                        }else{
+                            echo "Admin cụa tao đâu";
+                        }
+                    ?>
                 </nav>
             </div>
 
@@ -97,6 +105,7 @@
                                 $result = mysqli_query($connect, $sql);
                                 if ($result) {
                                     echo "<script>alert('Thêm sản phẩm thành công') </script>";
+                                    header('location: Management.php');
                                 } else {
                                     echo "<script>alert('Thêm thất bại') </script>";
                                 }

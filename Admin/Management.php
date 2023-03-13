@@ -5,7 +5,7 @@
         <div class="az-content-body">
             <div class="az-dashboard-one-title">
                 <div>
-                    <h2 class="az-dashboard-title">Hi, welcome back!</h2>
+                    <h2 class="az-dashboard-title">Hi, Admin</h2>
                     <p class="az-dashboard-text">Product Management.</p>
                 </div>
             </div><!-- az-dashboard-one-title -->
@@ -14,23 +14,34 @@
                 <nav class="nav">
                     <a class="nav-link active" data-toggle="tab" href="./Management.php"><i class="fa-sharp fa-solid fa-house"></i> Home </a>
                     <a class="nav-link" data-toggle="tab" href="./Upload_Product.php"><i class="fa-sharp fa-solid fa-download"></i> Upload Product </a>
-                    <a class="nav-link" data-toggle="tab" href="#">Demographics</a>
-                    <a class="nav-link" data-toggle="tab" href="#">More</a>
+                    <a class="nav-link" data-toggle="tab" href="#"> ...Category Product</a>
+                    <!-- <a class="nav-link" data-toggle="tab" href="#">More</a> -->
                 </nav>
 
                 <nav class="nav">
-                    <a class="nav-link" href="#"><i class="far fa-save"></i> Save Report</a>
+                    <?php
+                        if(isset($_SESSION['Welcome']['useremail'])){
+                            echo "
+                                <a class='nav-link' href='#'><i class='fa-sharp fa-solid fa-user'></i> {$_SESSION['Welcome']['useremail']}</a>
+                                
+                            ";
+                            echo "<a class='nav-link' href='../Logout.php'><i class='fa-sharp fa-solid fa-right-from-bracket'></i> Logout</a>";
+                            echo "<a class='nav-link' href='#'><i class='fas fa-ellipsis-h'></i></a>";
+                        }else{
+                            echo "Admin cụa tao đâu";
+                        }
+                    ?>
+                    <!-- <a class="nav-link" href="#"><i class="far fa-save"></i> Save Report</a>
                     <a class="nav-link" href="#"><i class="far fa-file-pdf"></i> Export to PDF</a>
                     <a class="nav-link" href="#"><i class="far fa-envelope"></i>Send to Email</a>
-                    <a class="nav-link" href="#"><i class="fas fa-ellipsis-h"></i></a>
+                    <a class="nav-link" href="#"><i class="fas fa-ellipsis-h"></i></a> -->
                 </nav>
             </div>
 
             <div class="col-lg-7 col-xl-8 mg-t-20 mg-lg-t-0">
                 <div class="card card-table-one">
-                    <h6 class="card-title">What pages do your users visit</h6>
-                    <p class="az-content-text mg-b-20">Part of this date range occurs before the new users metric had
-                        been calculated, so the old users metric is displayed.</p>
+                    <h6 class="card-title">What did you create?</h6>
+                    <p class="az-content-text mg-b-20">The products we create are the best and most perfect quality products!</p>
                     <div class="table-responsive">
                         <table class="table">
                             <thead>
