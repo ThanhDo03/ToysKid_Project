@@ -26,69 +26,69 @@ session_start();
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
     <script nonce="6a542a0d-7c5b-48c4-b05e-36d56d7b86fa">
-        (function(w, d) {
-            ! function(bw, bx, by, bz) {
-                bw[by] = bw[by] || {};
-                bw[by].executed = [];
-                bw.zaraz = {
-                    deferred: [],
-                    listeners: []
-                };
-                bw.zaraz.q = [];
-                bw.zaraz._f = function(bA) {
-                    return function() {
-                        var bB = Array.prototype.slice.call(arguments);
-                        bw.zaraz.q.push({
-                            m: bA,
-                            a: bB
-                        })
+    (function(w, d) {
+        ! function(bw, bx, by, bz) {
+            bw[by] = bw[by] || {};
+            bw[by].executed = [];
+            bw.zaraz = {
+                deferred: [],
+                listeners: []
+            };
+            bw.zaraz.q = [];
+            bw.zaraz._f = function(bA) {
+                return function() {
+                    var bB = Array.prototype.slice.call(arguments);
+                    bw.zaraz.q.push({
+                        m: bA,
+                        a: bB
+                    })
+                }
+            };
+            for (const bC of ["track", "set", "debug"]) bw.zaraz[bC] = bw.zaraz._f(bC);
+            bw.zaraz.init = () => {
+                var bD = bx.getElementsByTagName(bz)[0],
+                    bE = bx.createElement(bz),
+                    bF = bx.getElementsByTagName("title")[0];
+                bF && (bw[by].t = bx.getElementsByTagName("title")[0].text);
+                bw[by].x = Math.random();
+                bw[by].w = bw.screen.width;
+                bw[by].h = bw.screen.height;
+                bw[by].j = bw.innerHeight;
+                bw[by].e = bw.innerWidth;
+                bw[by].l = bw.location.href;
+                bw[by].r = bx.referrer;
+                bw[by].k = bw.screen.colorDepth;
+                bw[by].n = bx.characterSet;
+                bw[by].o = (new Date).getTimezoneOffset();
+                if (bw.dataLayer)
+                    for (const bJ of Object.entries(Object.entries(dataLayer).reduce(((bK, bL) => ({
+                            ...bK[1],
+                            ...bL[1]
+                        }))))) zaraz.set(bJ[0], bJ[1], {
+                        scope: "page"
+                    });
+                bw[by].q = [];
+                for (; bw.zaraz.q.length;) {
+                    const bM = bw.zaraz.q.shift();
+                    bw[by].q.push(bM)
+                }
+                bE.defer = !0;
+                for (const bN of [localStorage, sessionStorage]) Object.keys(bN || {}).filter((bP => bP
+                    .startsWith("_zaraz_"))).forEach((bO => {
+                    try {
+                        bw[by]["z_" + bO.slice(7)] = JSON.parse(bN.getItem(bO))
+                    } catch {
+                        bw[by]["z_" + bO.slice(7)] = bN.getItem(bO)
                     }
-                };
-                for (const bC of ["track", "set", "debug"]) bw.zaraz[bC] = bw.zaraz._f(bC);
-                bw.zaraz.init = () => {
-                    var bD = bx.getElementsByTagName(bz)[0],
-                        bE = bx.createElement(bz),
-                        bF = bx.getElementsByTagName("title")[0];
-                    bF && (bw[by].t = bx.getElementsByTagName("title")[0].text);
-                    bw[by].x = Math.random();
-                    bw[by].w = bw.screen.width;
-                    bw[by].h = bw.screen.height;
-                    bw[by].j = bw.innerHeight;
-                    bw[by].e = bw.innerWidth;
-                    bw[by].l = bw.location.href;
-                    bw[by].r = bx.referrer;
-                    bw[by].k = bw.screen.colorDepth;
-                    bw[by].n = bx.characterSet;
-                    bw[by].o = (new Date).getTimezoneOffset();
-                    if (bw.dataLayer)
-                        for (const bJ of Object.entries(Object.entries(dataLayer).reduce(((bK, bL) => ({
-                                ...bK[1],
-                                ...bL[1]
-                            }))))) zaraz.set(bJ[0], bJ[1], {
-                            scope: "page"
-                        });
-                    bw[by].q = [];
-                    for (; bw.zaraz.q.length;) {
-                        const bM = bw.zaraz.q.shift();
-                        bw[by].q.push(bM)
-                    }
-                    bE.defer = !0;
-                    for (const bN of [localStorage, sessionStorage]) Object.keys(bN || {}).filter((bP => bP
-                        .startsWith("_zaraz_"))).forEach((bO => {
-                        try {
-                            bw[by]["z_" + bO.slice(7)] = JSON.parse(bN.getItem(bO))
-                        } catch {
-                            bw[by]["z_" + bO.slice(7)] = bN.getItem(bO)
-                        }
-                    }));
-                    bE.referrerPolicy = "origin";
-                    bE.src = "/cdn-cgi/zaraz/s.js?z=" + btoa(encodeURIComponent(JSON.stringify(bw[by])));
-                    bD.parentNode.insertBefore(bE, bD)
-                };
-                ["complete", "interactive"].includes(bx.readyState) ? zaraz.init() : bw.addEventListener(
-                    "DOMContentLoaded", zaraz.init)
-            }(w, d, "zarazData", "script");
-        })(window, document);
+                }));
+                bE.referrerPolicy = "origin";
+                bE.src = "/cdn-cgi/zaraz/s.js?z=" + btoa(encodeURIComponent(JSON.stringify(bw[by])));
+                bD.parentNode.insertBefore(bE, bD)
+            };
+            ["complete", "interactive"].includes(bx.readyState) ? zaraz.init() : bw.addEventListener(
+                "DOMContentLoaded", zaraz.init)
+        }(w, d, "zarazData", "script");
+    })(window, document);
     </script>
 </head>
 
@@ -129,8 +129,7 @@ session_start();
                                         <table>
                                             <tbody>
                                                 <tr>
-                                                    <td class="si-pic"><img src="img/select-product-1.jpg"
-                                                            alt=""></td>
+                                                    <td class="si-pic"><img src="img/select-product-1.jpg" alt=""></td>
                                                     <td class="si-text">
                                                         <div class="product-selected">
                                                             <p>$60.00 x 1</p>
@@ -142,8 +141,7 @@ session_start();
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td class="si-pic"><img src="img/select-product-2.jpg"
-                                                            alt=""></td>
+                                                    <td class="si-pic"><img src="img/select-product-2.jpg" alt=""></td>
                                                     <td class="si-text">
                                                         <div class="product-selected">
                                                             <p>$60.00 x 1</p>
@@ -205,7 +203,7 @@ session_start();
                         <li><a href="./blog.html">Blog</a></li>
                         <li><a href="./contact.html">Contact</a></li>
                         <li>
-                        <?php
+                            <?php
                                 if (isset($_SESSION['Welcome']['useremail'])) {
                                     echo "<a href=''>Ab Me</a>
                                             <ul class='dropdown'>
@@ -261,32 +259,32 @@ session_start();
 
     <div class="banner-section spad">
         <div class="container-fluid">
-            <div class="row">
+            <!-- <div class="row">
                 <div class="col-lg-4">
                     <div class="single-banner">
-                        <img src="img/Banner-1.jpg" alt="">
+                        <img src="img/IronMan-Marvel.jpg" alt="">
                         <div class="inner-text">
-                            <h4>City</h4>
+                            <h4>Iron Man</h4>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4">
                     <div class="single-banner">
-                        <img src="img/Banner-2.jpg" alt="">
+                        <img src="img/Nhen-Marvel.jpg" alt="">
                         <div class="inner-text">
-                            <h4>Ninja</h4>
+                            <h4>Spider-Man</h4>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4">
                     <div class="single-banner">
-                        <img src="img/Banner.jpg" alt="">
+                        <img src="img/banner.jpg" alt="">
                         <div class="inner-text">
                             <h4>Marvel</h4>
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
 
@@ -299,153 +297,6 @@ session_start();
                     </div>
                 </div>
                 <div class="col-lg-8 offset-lg-1">
-                    <div class="filter-control">
-                        <ul>
-                            <li class="active">Lego Marvel</li>
-                            <!-- <li>HandBag</li>
-                            <li>Shoes</li>
-                            <li>Accessories</li> -->
-                        </ul>
-                    </div>
-                    <div class="product-slider owl-carousel">
-                        <div class="product-item">
-                            <div class="pi-pic">
-                                <img src="img/products/women-1.jpg" alt="">
-                                <div class="sale">Sale</div>
-                                <div class="icon">
-                                    <i class="icon_heart_alt"></i>
-                                </div>
-                                <ul>
-                                    <li class="w-icon active"><a href="#"><i class="icon_bag_alt"></i></a></li>
-                                    <li class="quick-view"><a href="#">+ Quick View</a></li>
-                                    <li class="w-icon"><a href="#"><i class="fa fa-random"></i></a></li>
-                                </ul>
-                            </div>
-                            <div class="pi-text">
-                                <div class="catagory-name">Coat</div>
-                                <a href="#">
-                                    <h5>Pure Pineapple</h5>
-                                </a>
-                                <div class="product-price">
-                                    $14.00
-                                    <span>$35.00</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product-item">
-
-                            <div class="pi-pic">
-                                <img src="img/products/women-2.jpg" alt="">
-                                <div class="icon">
-                                    <i class="icon_heart_alt"></i>
-                                </div>
-                                <ul>
-                                    <li class="w-icon active"><a href="#"><i class="icon_bag_alt"></i></a></li>
-                                    <li class="quick-view"><a href="#">+ Quick View</a></li>
-                                    <li class="w-icon"><a href="#"><i class="fa fa-random"></i></a></li>
-                                </ul>
-                            </div>
-                            <div class="pi-text">
-                                <div class="catagory-name">Shoes</div>
-                                <a href="#">
-                                    <h5>Guangzhou sweater</h5>
-                                </a>
-                                <div class="product-price">
-                                    $13.00
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product-item">
-                            <div class="pi-pic">
-                                <img src="img/products/women-3.jpg" alt="">
-                                <div class="icon">
-                                    <i class="icon_heart_alt"></i>
-                                </div>
-                                <ul>
-                                    <li class="w-icon active"><a href="#"><i class="icon_bag_alt"></i></a></li>
-                                    <li class="quick-view"><a href="#">+ Quick View</a></li>
-                                    <li class="w-icon"><a href="#"><i class="fa fa-random"></i></a></li>
-                                </ul>
-                            </div>
-                            <div class="pi-text">
-                                <div class="catagory-name">Towel</div>
-                                <a href="#">
-                                    <h5>Pure Pineapple</h5>
-                                </a>
-                                <div class="product-price">
-                                    $34.00
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product-item">
-                            <div class="pi-pic">
-                                <img src="img/products/women-4.jpg" alt="">
-                                <div class="icon">
-                                    <i class="icon_heart_alt"></i>
-                                </div>
-                                <ul>
-                                    <li class="w-icon active"><a href="#"><i class="icon_bag_alt"></i></a></li>
-                                    <li class="quick-view"><a href="#">+ Quick View</a></li>
-                                    <li class="w-icon"><a href="#"><i class="fa fa-random"></i></a></li>
-                                </ul>
-                            </div>
-                            <div class="pi-text">
-                                <div class="catagory-name">Towel</div>
-                                <a href="#">
-                                    <h5>Converse Shoes</h5>
-                                </a>
-                                <div class="product-price">
-                                    $34.00
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <section class="deal-of-week set-bg spad" data-setbg="img/55637.jpg">
-        <div class="container">
-            <div class="col-lg-6 text-center">
-                <div class="section-title">
-                    <h2>Deal Of The Week</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed<br /> do ipsum dolor sit amet,
-                        consectetur adipisicing elit </p>
-                    <div class="product-price">
-                        $350.000
-                        <span>/ Marvel</span>
-                    </div>
-                </div>
-                <div class="countdown-timer" id="countdown">
-                    <div class="cd-item">
-                        <span>56</span>
-                        <p>Days</p>
-                    </div>
-                    <div class="cd-item">
-                        <span>12</span>
-                        <p>Hrs</p>
-                    </div>
-                    <div class="cd-item">
-                        <span>40</span>
-                        <p>Mins</p>
-                    </div>
-                    <div class="cd-item">
-                        <span>52</span>
-                        <p>Secs</p>
-                    </div>
-                </div>
-                <a href="#" class="primary-btn">Shop Now</a>
-            </div>
-        </div>
-    </section>
-
-
-    <section class="man-banner spad">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-8">
                     <div class="filter-control">
                         <ul>
                             <li class="active">Lego City - Family</li>
@@ -506,9 +357,117 @@ session_start();
                         // đóng kết nối
                         mysqli_close($connect);
                         ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+
+    <section class="deal-of-week set-bg spad" data-setbg="img/55637.jpg">
+        <div class="container">
+            <div class="col-lg-6 text-center">
+                <div class="section-title">
+                    <h2>Deal Of The Week</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed<br /> do ipsum dolor sit amet,
+                        consectetur adipisicing elit </p>
+                    <div class="product-price">
+                        $350.000
+                        <span>/ Marvel</span>
+                    </div>
+                </div>
+                <div class="countdown-timer" id="countdown">
+                    <div class="cd-item">
+                        <span>56</span>
+                        <p>Days</p>
+                    </div>
+                    <div class="cd-item">
+                        <span>12</span>
+                        <p>Hrs</p>
+                    </div>
+                    <div class="cd-item">
+                        <span>40</span>
+                        <p>Mins</p>
+                    </div>
+                    <div class="cd-item">
+                        <span>52</span>
+                        <p>Secs</p>
+                    </div>
+                </div>
+                <a href="#" class="primary-btn">Shop Now</a>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="man-banner spad">
+        <div class="container-fluid">
+            <!-- <div class="row">
+                <div class="col-lg-8">
+                    <div class="filter-control">
+                        <ul>
+                            <li class="active">Lego City - Family</li>
+                            <li>HandBag</li>
+                            <li>Shoes</li>
+                            <li>Accessories</li>
+                        </ul>
+                    </div>
+                    <div class="product-slider owl-carousel">
+                        <?php
+                        $connect = mysqli_connect('localhost', 'root', '', 'ToysKid_Project');
                         
+                        if (mysqli_connect_errno()) {
+                            echo 'Không thể kết nối đến MySQL: ' . mysqli_connect_error();
+                            exit();
+                        }
                         
-                        <!-- <div class="product-item">
+                        // truy vấn dữ liệu
+                        $result = mysqli_query($connect, 'SELECT name, price, Image FROM products');
+                        
+                        // kiểm tra kết quả và hiển thị dữ liệu
+                        if (mysqli_num_rows($result) > 0) {
+                            while ($row = mysqli_fetch_assoc($result)) {
+                                $name = $row['name'];
+                                $price = $row['price'];
+                                $image = $row['Image'];
+                               
+                                echo "
+                                <div class='product-item'>
+                                <div class='pi-pic'>
+                                    <img src='./Admin/Products\\$image'>
+                                    <div class='sale'>Sale</div>
+                                    <div class='icon'>
+                                        <i class='icon_heart_alt'></i>
+                                    </div>
+                                    <ul>
+                                        <li class='w-icon active'><a href='#'><i class='icon_bag_alt'></i></a></li>
+                                        <li class='quick-view'><a href='#'>+ Quick View</a></li>
+                                        <li class='w-icon'><a href='#'><i class='fa fa-random'></i></a></li>
+                                    </ul>
+                                </div>
+                                <div class='pi-text'>
+                                    <a href='#'>
+                                        <h5>$name</h5>
+                                    </a>
+                                    <div class='product-price'>
+                                        $14.00
+                                        <span>$price</span>
+                                    </div>
+                                </div>
+                            </div>
+                                ";
+                            }
+                        } else {
+                            echo 'Không có sản phẩm nào trong cơ sở dữ liệu.';
+                        }
+                        
+                        // đóng kết nối
+                        mysqli_close($connect);
+                        ?>
+
+
+                        <div class="product-item">
                             <div class="pi-pic">
                                 <img src="img/products/man-3.jpg" alt="">
                                 <div class="icon">
@@ -529,7 +488,7 @@ session_start();
                                     $34.00
                                 </div>
                             </div>
-                        </div> -->
+                        </div>
                     </div>
                 </div>
                 <div class="col-lg-3 offset-lg-1">
@@ -538,7 +497,7 @@ session_start();
                         <a href="#">Discover More</a>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
     </section>
 
@@ -546,44 +505,38 @@ session_start();
     <div class="instagram-photo">
         <div class="insta-item set-bg" data-setbg="img/Cap-Marvel.jpg">
             <div class="inside-text">
-                <i class="ti-instagram"></i>
-                <h5><a href="#">colorlib_Collection</a></h5>
+                <h5><a href="#">Captain Marvel</a></h5>
             </div>
         </div>
         <div class="insta-item set-bg" data-setbg="img/Nhen-Marvel.jpg">
             <div class="inside-text">
-                <i class="ti-instagram"></i>
-                <h5><a href="#">colorlib_Collection</a></h5>
+                <h5><a href="#">Spider-Man Marvel</a></h5>
             </div>
         </div>
         <div class="insta-item set-bg" data-setbg="img/Wasp-Marvel.jpg">
             <div class="inside-text">
-                <i class="ti-instagram"></i>
-                <h5><a href="#">colorlib_Collection</a></h5>
+                <h5><a href="#">Wasp Marvel</a></h5>
             </div>
         </div>
         <div class="insta-item set-bg" data-setbg="img/IronMan-Marvel.jpg">
             <div class="inside-text">
-                <i class="ti-instagram"></i>
-                <h5><a href="#">colorlib_Collection</a></h5>
+                <h5><a href="#">Iron-Man Marvel</a></h5>
             </div>
         </div>
         <div class="insta-item set-bg" data-setbg="img/Thor-Marvel.jpg">
             <div class="inside-text">
-                <i class="ti-instagram"></i>
-                <h5><a href="#">colorlib_Collection</a></h5>
+                <h5><a href="#">Thor Marvel</a></h5>
             </div>
         </div>
         <div class="insta-item set-bg" data-setbg="img/QuaPhu-Marvel.jpg">
             <div class="inside-text">
-                <i class="ti-instagram"></i>
-                <h5><a href="#">colorlib_Collection</a></h5>
+                <h5><a href="#">Black Widow Marvel</a></h5>
             </div>
         </div>
     </div>
 
 
-    <section class="latest-blog spad">
+    <!-- <section class="latest-blog spad">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -695,7 +648,7 @@ session_start();
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
 
     <div class="partner-logo">
@@ -795,12 +748,12 @@ session_start();
                         <div class="copyright-text">
 
                             Copyright &copy;
-                            <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+                            <script data-cfasync="false"
+                                src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
                             <script>
-                                document.write(new Date().getFullYear());
-                            </script> All rights reserved | This template is made with <i
-                                class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com"
-                                target="_blank">Colorlib</a>
+                            document.write(new Date().getFullYear());
+                            </script> All rights reserved | This template is made with <i class="fa fa-heart-o"
+                                aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
 
                         </div>
                         <div class="payment-pic">
@@ -826,16 +779,17 @@ session_start();
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
+    window.dataLayer = window.dataLayer || [];
 
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
 
-        gtag('config', 'UA-23581568-13');
+    gtag('config', 'UA-23581568-13');
     </script>
-    <script defer src="https://static.cloudflareinsights.com/beacon.min.js/vaafb692b2aea4879b33c060e79fe94621666317369993"
+    <script defer
+        src="https://static.cloudflareinsights.com/beacon.min.js/vaafb692b2aea4879b33c060e79fe94621666317369993"
         integrity="sha512-0ahDYl866UMhKuYcW078ScMalXqtFJggm7TmlUtp0UlD4eQk0Ixfnm5ykXKvGJNFjLMoortdseTfsRT8oCfgGA=="
         data-cf-beacon='{"rayId":"79f83bff0abd045b","token":"cd0b4b3a733644fc843ef0b185f98241","version":"2023.2.0","si":100}'
         crossorigin="anonymous"></script>
