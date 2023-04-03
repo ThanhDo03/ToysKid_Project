@@ -105,7 +105,7 @@
                                 $result = mysqli_query($connect, $sql);
                                 if ($result) {
                                     echo "<script>alert('Thêm sản phẩm thành công') </script>";
-                                    header('location: Management.php');
+                                    // header('location:Management.php');
                                 } else {
                                     echo "<script>alert('Thêm thất bại') </script>";
                                 }

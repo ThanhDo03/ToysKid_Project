@@ -36,7 +36,7 @@
             // 2. Chuẩn bị câu truy vấn $sqlSelect, lấy dữ liệu ban đầu của record cần update
             // Lấy giá trị khóa chính được truyền theo dạng QueryString Parameter key1=value1&key2=value2...
             // $id = $_GET['id'];
-            $id = 7;
+            $id = $_GET['id'];
             $sqlSelect = "SELECT * FROM `products` WHERE id=$id;";
             
             // 3. Thực thi câu truy vấn SQL để lấy về dữ liệu ban đầu của record cần update

@@ -19,4 +19,4 @@ $result = mysqli_query($connect, $sql);
 mysqli_close($connect);
 
 // Sau khi cập nhật dữ liệu, tự động điều hướng về trang Danh sách
-header('location:index.php');
+header('location:Management.php');
