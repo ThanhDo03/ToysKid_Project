@@ -38,10 +38,10 @@
 	content: "\e646";
 }
 .ti-angle-right:before {
-	content: "\e649";
+	content: "";
 }
 .ti-angle-left:before {
-	content: "<i class="fa-sharp fa-solid fa-less-than"></i>";
+	content: "";
 }
 .ti-menu:before {
 	content: "\e68e";

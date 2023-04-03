@@ -8,10 +8,11 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="Fashi Template">
-    <meta name="keywords" content="Fashi, unica, creative, html">
+    <meta name="keywords" content="Toys For Kids, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Fashi | Store</title>
+    <link rel="icon" href="img/Logo_Copy.png" sizes="16x16">
+    <title>Toys For Kids | Store</title>
 
     <link href="https://fonts.googleapis.com/css?family=Muli:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/f52718c374.js" crossorigin="anonymous"></script>
@@ -105,7 +106,7 @@ session_start();
                     <div class="col-lg-2 col-md-2">
                         <div class="logo">
                             <a href="./index.html">
-                                <img src="img/logo.png" alt="">
+                                <img class="img_logo" src="img/Logo.png" alt="">
                             </a>
                         </div>
                     </div>
@@ -129,7 +130,7 @@ session_start();
                                         <table>
                                             <tbody>
                                                 <tr>
-                                                    <td class="si-pic"><img src="img/select-product-1.jpg" alt=""></td>
+                                                    <td class="si-pic"><img src="img/Thor-Marvel.jpg" alt=""></td>
                                                     <td class="si-text">
                                                         <div class="product-selected">
                                                             <p>$60.00 x 1</p>
@@ -137,11 +138,11 @@ session_start();
                                                         </div>
                                                     </td>
                                                     <td class="si-close">
-                                                        <i class="ti-close"></i>
+                                                    <i class="fa-sharp fa-solid fa-xmark"></i>
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td class="si-pic"><img src="img/select-product-2.jpg" alt=""></td>
+                                                    <td class="si-pic"><img src="img/Wasp-Marvel.jpg" alt=""></td>
                                                     <td class="si-text">
                                                         <div class="product-selected">
                                                             <p>$60.00 x 1</p>
@@ -149,7 +150,7 @@ session_start();
                                                         </div>
                                                     </td>
                                                     <td class="si-close">
-                                                        <i class="ti-close"></i>
+                                                    <i class="fa-sharp fa-solid fa-xmark"></i>
                                                     </td>
                                                 </tr>
                                             </tbody>
@@ -175,7 +176,7 @@ session_start();
             <div class="container">
                 <div class="nav-depart">
                     <div class="depart-btn">
-                        <i class="ti-menu"></i>
+                        <!-- <i class="ti-menu"></i> -->
                         <span>All departments</span>
                         <ul class="depart-hover">
                             <li class="active"><a href="#">Women’s Clothing</a></li>
@@ -333,7 +334,7 @@ session_start();
                                         <i class='icon_heart_alt'></i>
                                     </div>
                                     <ul>
-                                        <li class='w-icon active'><a href='#'><i class='icon_bag_alt'></i></a></li>
+                                        <li class='w-icon active'><a href='#'><i class='fa-sharp fa-solid fa-bag-shopping'></i></a></li>
                                         <li class='quick-view'><a href='#'>+ Quick View</a></li>
                                         <li class='w-icon'><a href='#'><i class='fa fa-random'></i></a></li>
                                     </ul>
@@ -690,7 +691,7 @@ session_start();
                 <div class="col-lg-3">
                     <div class="footer-left">
                         <div class="footer-logo">
-                            <a href="#"><img src="img/footer-logo.png" alt=""></a>
+                            <a href="#" class="img_logo"><img src="img/Logo.png" alt=""></a>
                         </div>
                         <ul>
                             <li>Address: 60-49 Road 11378 New York</li>

@@ -69,7 +69,7 @@ session_start();
             </div><!-- az-header-menu -->
             <div class="az-header-right">
                 <div class="dropdown az-profile-menu">
-                    <a href="" class="az-img-user"><img src="../vv/fun.jpg" alt=""></a>
+                    <a href="" class="az-img-user"><img src="../img/Logo_Copy.png" alt=""></a>
                     <!-- <?php
                         if (isset($_SESSION['Welcome']['useremail'])) {
                             # code...

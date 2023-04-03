@@ -386,7 +386,7 @@ ol {
 }
 
 .inner-header .logo {
-	padding: 12px 0;
+	margin-top: -25px;
 }
 
 .inner-header .logo a {
@@ -4230,4 +4230,11 @@ ol {
 		padding-left: 15px;
 		padding-right: 15px;
 	}
+}
+
+.logo .img_logo{
+	max-width: 70%;
+}
+.footer-logo .img_logo{
+	max-width: 75%;
 }
